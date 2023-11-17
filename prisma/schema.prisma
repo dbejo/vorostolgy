@@ -25,6 +25,8 @@ model Category {
 model Item {
     id        String      @id @default(cuid())
     name      String
+    price     Int
+    description String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     category Category @relation(fields: [categoryId], references: [id])
