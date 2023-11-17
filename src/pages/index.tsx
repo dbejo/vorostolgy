@@ -10,7 +10,11 @@ export default function Home() {
       <Head>
         <title>Create T3 App</title>
       </Head>
-      <main>{categories?.map((category) => <div>{category.name}</div>)}</main>
+      <main>
+        {categories?.map((category) => (
+          <div key={category.id}>{category.name}</div>
+        ))}
+      </main>
     </>
   );
 }

@@ -66,7 +66,9 @@ export default function AdminPage() {
             </button>
           </div>
           <div className="flex flex-col py-2">
-            {categories?.map((category) => <span>{category.name}</span>)}
+            {categories?.map((category) => (
+              <span key={category.id}>{category.name}</span>
+            ))}
           </div>
         </div>
         <div>
@@ -99,7 +101,9 @@ export default function AdminPage() {
               className="grow rounded border-2 border-slate-200 outline-4 outline-slate-400"
             >
               {categories?.map((item) => (
-                <option value={item.id}>{item.name}</option>
+                <option value={item.id} key={item.id}>
+                  {item.name}
+                </option>
               ))}
             </select>
             <button
@@ -118,7 +122,7 @@ export default function AdminPage() {
           </div>
           <div className="flex flex-col py-2">
             {items?.map((item) => (
-              <div>
+              <div key={item.id}>
                 {item.name} {item.description} {item.price} {item.categoryId}
               </div>
             ))}
