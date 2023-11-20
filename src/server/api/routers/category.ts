@@ -26,4 +26,23 @@ export const categoryRouter = createTRPCRouter({
         },
       });
     }),
+
+  delete: privateProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      await ctx.db.item.deleteMany({
+        where: {
+          categoryId: input.id,
+        },
+      }),
+        await ctx.db.category.delete({
+          where: {
+            id: input.id,
+          },
+        });
+    }),
 });

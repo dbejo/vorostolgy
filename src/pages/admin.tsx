@@ -21,10 +21,26 @@ export default function AdminPage() {
       if (errorMessage?.[0]) {
         console.log(errorMessage[0]);
       } else {
-        console.log("Failed add category! Please try again later.");
+        console.log("Failed to add category! Please try again later.");
       }
     },
   });
+
+  const { mutate: deleteCategory } = api.category.delete.useMutation({
+    onSuccess: () => {
+      void ctx.category.getAll.invalidate();
+      void ctx.items.getAll.invalidate();
+    },
+    onError: (e) => {
+      const errorMessage = e.data?.zodError?.fieldErrors.content;
+      if (errorMessage?.[0]) {
+        console.log(errorMessage[0]);
+      } else {
+        console.log("Failed to delete category! Please try again later.");
+      }
+    },
+  });
+
   const { mutate: mutateItems } = api.items.create.useMutation({
     onSuccess: () => {
       setItemInput("");
@@ -39,6 +55,20 @@ export default function AdminPage() {
         console.log(errorMessage[0]);
       } else {
         console.log("Failed add item Please try again later.");
+      }
+    },
+  });
+
+  const { mutate: deleteItem } = api.items.delete.useMutation({
+    onSuccess: () => {
+      void ctx.items.getAll.invalidate();
+    },
+    onError: (e) => {
+      const errorMessage = e.data?.zodError?.fieldErrors.content;
+      if (errorMessage?.[0]) {
+        console.log(errorMessage[0]);
+      } else {
+        console.log("Failed to delete item! Please try again later.");
       }
     },
   });
@@ -67,7 +97,15 @@ export default function AdminPage() {
           </div>
           <div className="flex flex-col py-2">
             {categories?.map((category) => (
-              <span key={category.id}>{category.name}</span>
+              <div className="flex w-full hover:bg-slate-100" key={category.id}>
+                <span className="grow">{category.name}</span>
+                <button
+                  className="my-2 w-12 rounded border border-red-400 bg-red-600 text-white hover:bg-red-500"
+                  onClick={() => deleteCategory({ id: category.id })}
+                >
+                  X
+                </button>
+              </div>
             ))}
           </div>
         </div>
@@ -122,8 +160,16 @@ export default function AdminPage() {
           </div>
           <div className="flex flex-col py-2">
             {items?.map((item) => (
-              <div key={item.id}>
-                {item.name} {item.description} {item.price} {item.categoryId}
+              <div className="flex w-full hover:bg-slate-100" key={item.id}>
+                <span className="w-1/3">{item.name}</span>
+                <span className="w-1/3">{item.description}</span>
+                <span className="grow">{item.price}</span>
+                <button
+                  className="my-2 w-12 rounded border border-red-400 bg-red-600 text-white hover:bg-red-500"
+                  onClick={() => deleteItem({ id: item.id })}
+                >
+                  X
+                </button>
               </div>
             ))}
           </div>
