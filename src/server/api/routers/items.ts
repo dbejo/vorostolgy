@@ -13,6 +13,17 @@ export const itemsRouter = createTRPCRouter({
     });
   }),
 
+  getByCategoryId: publicProcedure
+    .input(z.string())
+    .query(async ({ ctx, input }) => {
+      return await ctx.db.item.findMany({
+        where: {
+          categoryId: input,
+        },
+        orderBy: [{ price: "asc" }],
+      });
+    }),
+
   create: privateProcedure
     .input(
       z.object({
