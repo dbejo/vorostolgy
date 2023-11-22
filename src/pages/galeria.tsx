@@ -2,24 +2,25 @@ import Image from "next/image";
 import { PageLayout } from "~/components/layout";
 import Navbar from "~/components/navbar";
 export default function GalleryPage() {
-  const images = [];
-  for (let i = 1; i < 11; i++) {
-    images.push(
-      <div className="group">
+  const images = Array.from({ length: 10 }, (_, i) => {
+    const imagePath = `/images/gallery/vt${i + 1}.jpg`;
+    return (
+      <div className="group" key={i}>
         <div className="relative -z-10 h-72 w-full transition duration-300 group-hover:opacity-75">
           <Image
             className="rounded-lg"
-            src={`/images/gallery/vt${i}.jpg`}
-            alt={"The building from outside"}
+            src={imagePath}
+            alt={`Image ${i + 1}`}
             fill
+            placeholder="blur"
             style={{
               objectFit: "cover",
             }}
           />
         </div>
-      </div>,
+      </div>
     );
-  }
+  });
   return (
     <>
       <Navbar />
