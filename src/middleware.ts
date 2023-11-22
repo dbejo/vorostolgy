@@ -6,7 +6,8 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
   publicRoutes: [
     "/",
-    "/menu",
+    "/etlap",
+    "/galeria",
     "/api/trpc/(category.getAll)(.*)",
     "/api/trpc/(items.getAll)(.*)",
     "/api/trpc/(items.getByCategoryId)(.*)",

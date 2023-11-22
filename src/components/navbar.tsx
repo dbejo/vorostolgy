@@ -6,10 +6,10 @@ export default function Navbar() {
       <Link href="/" className="self-center">
         Rólunk
       </Link>
-      <Link href="/menu" className="self-center">
+      <Link href="/etlap" className="self-center">
         Étlap
       </Link>
-      <Link href="/" className="self-center">
+      <Link href="/galeria" className="self-center">
         Galéria
       </Link>
       <Link href="/" className="self-center">
