@@ -5,16 +5,18 @@ export default function GalleryPage() {
   const images = [];
   for (let i = 1; i < 11; i++) {
     images.push(
-      <div className="relative -z-10 h-72 w-full md:w-1/3">
-        <Image
-          className="py-2 md:p-2"
-          src={`/images/gallery/vt${i}.jpg`}
-          alt={"The building from outside"}
-          fill
-          style={{
-            objectFit: "cover",
-          }}
-        />
+      <div className="group">
+        <div className="relative -z-10 h-72 w-full transition duration-300 group-hover:opacity-75">
+          <Image
+            className="rounded-lg"
+            src={`/images/gallery/vt${i}.jpg`}
+            alt={"The building from outside"}
+            fill
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </div>
       </div>,
     );
   }
@@ -22,7 +24,7 @@ export default function GalleryPage() {
     <>
       <Navbar />
       <PageLayout>
-        <div className="flex w-full flex-wrap">{images}</div>
+        <div className="grid w-full gap-2 md:grid-cols-3">{images}</div>
       </PageLayout>
     </>
   );
