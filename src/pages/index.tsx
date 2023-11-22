@@ -1,12 +1,14 @@
 import Head from "next/head";
 import { PageLayout } from "~/components/layout";
 import Image from "next/image";
+import Navbar from "~/components/navbar";
 export default function Home() {
   return (
     <>
       <Head>
         <title>Vörös Tölgy Étel-Ital Bár - Vámosmikola</title>
       </Head>
+      <Navbar />
       <PageLayout>
         <h1 className="py-2 text-3xl">Rólunk</h1>
         <div className="flex w-full flex-col gap-2 py-2 md:flex-row">

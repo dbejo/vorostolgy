@@ -1,5 +1,6 @@
 import { api } from "~/utils/api";
 import { PageLayout } from "~/components/layout";
+import Navbar from "~/components/navbar";
 
 export default function MenuPage() {
   const { data: categories } = api.category.getAll.useQuery();
@@ -28,15 +29,18 @@ export default function MenuPage() {
   };
 
   return (
-    <PageLayout>
-      {categories?.map((category) => {
-        return (
-          <div key={category.id} className="w-full py-2">
-            <h2 className="text-2xl">{category.name}</h2>
-            <Items categoryId={category.id} />
-          </div>
-        );
-      })}
-    </PageLayout>
+    <>
+      <Navbar />
+      <PageLayout>
+        {categories?.map((category) => {
+          return (
+            <div key={category.id} className="w-full py-2">
+              <h2 className="text-2xl">{category.name}</h2>
+              <Items categoryId={category.id} />
+            </div>
+          );
+        })}
+      </PageLayout>
+    </>
   );
 }
