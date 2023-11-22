@@ -7,9 +7,9 @@ export default authMiddleware({
   publicRoutes: [
     "/",
     "/menu",
-    "/api/trpc/category.getAll",
-    "/api/trpc/items.getAll",
-    "/api/trpc/items.getByCategoryId,items.getByCategoryId",
+    "/api/trpc/(category.getAll)(.*)",
+    "/api/trpc/(items.getAll)(.*)",
+    "/api/trpc/(items.getByCategoryId)(.*)",
   ],
 });
 
