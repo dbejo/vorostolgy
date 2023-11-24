@@ -2,6 +2,9 @@ import Head from "next/head";
 import { PageLayout } from "~/components/layout";
 import Image from "next/image";
 import Navbar from "~/components/navbar";
+import tolgy1 from "/public/images/tolgy1.jpg";
+import szep_kartyak from "/public/images/szep_kartyak.png";
+
 export default function Home() {
   return (
     <>
@@ -15,8 +18,9 @@ export default function Home() {
           <div className="w-full md:w-1/2">
             <Image
               className="rounded-lg"
-              src={"/images/tolgy1.jpeg"}
+              src={tolgy1}
               alt={"The building from outside"}
+              placeholder="blur"
               width={3783}
               height={2128}
             />
@@ -33,7 +37,8 @@ export default function Home() {
           <div className="w-full md:w-1/2">
             <Image
               className="rounded-lg"
-              src={"/images/szep_kartyak.png"}
+              src={szep_kartyak}
+              placeholder="blur"
               alt={"SZEP cards"}
               width={805}
               height={461}

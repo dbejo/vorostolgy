@@ -1,12 +1,17 @@
 import { api } from "~/utils/api";
 import { PageLayout } from "~/components/layout";
 import Navbar from "~/components/navbar";
+import { LoadingPage, LoadingSpinner } from "~/components/loading";
 
 export default function MenuPage() {
-  const { data: categories } = api.category.getAll.useQuery();
+  const { data: categories, isLoading } = api.category.getAll.useQuery();
+  if (isLoading) return <LoadingPage />;
 
   const Items = (props: { categoryId: string }) => {
-    const { data } = api.items.getByCategoryId.useQuery(props.categoryId);
+    const { data, isLoading } = api.items.getByCategoryId.useQuery(
+      props.categoryId,
+    );
+    if (isLoading) return <LoadingSpinner />;
     if (!data || data.length === 0) return <div>No items</div>;
     return (
       <div>
