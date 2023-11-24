@@ -11,10 +11,10 @@ const HamburgerButton = (props: { isButtonClicked?: boolean }) => {
           }`}
         >
           <div
-            className={`h-[2px] w-7 bg-white transition-all duration-200 ${
+            className={`h-[2px] bg-white transition-all duration-200 ${
               props.isButtonClicked
                 ? "w-2/3 origin-left rotate-[42deg]"
-                : "rotate-0"
+                : "w-7 rotate-0"
             }`}
           ></div>
           <div
@@ -23,10 +23,10 @@ const HamburgerButton = (props: { isButtonClicked?: boolean }) => {
             }`}
           ></div>
           <div
-            className={`h-[2px] w-7 bg-white transition-all duration-200 ${
+            className={`h-[2px] bg-white transition-all duration-200 ${
               props.isButtonClicked
                 ? "w-2/3 origin-left -rotate-[42deg]"
-                : "rotate-0"
+                : "w-7 rotate-0"
             }`}
           ></div>
         </div>
