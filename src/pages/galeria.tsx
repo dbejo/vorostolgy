@@ -12,6 +12,7 @@ export default function GalleryPage() {
             src={`/images/gallery/vt${i}.jpg`}
             alt={"The building from outside"}
             fill
+            sizes="(min-width: 1220px) 368px, (min-width: 780px) calc(29.52vw + 14px), calc(100vw - 32px)"
             style={{
               objectFit: "cover",
             }}
