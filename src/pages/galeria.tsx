@@ -12,7 +12,6 @@ export default function GalleryPage() {
         className={`fixed left-0 top-0 z-50 h-full w-full items-center justify-center overflow-visible bg-black bg-opacity-50 ${
           isModalVisible ? "flex" : "hidden"
         }`}
-        onClick={() => setModalVisible(false)}
       >
         <div className="rounded-lg bg-white p-4">
           <div className="flex justify-end">
