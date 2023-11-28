@@ -38,7 +38,7 @@ const HamburgerButton = (props: { isButtonClicked?: boolean }) => {
 export default function Navbar() {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   return (
-    <div className="sticky top-0 w-full bg-red-700 text-white">
+    <nav className="sticky top-0 w-full bg-red-700 text-white">
       <div className="flex h-14 md:hidden">
         <div className="grow self-center">
           <Link href="/" className="flex w-fit px-2">
@@ -70,6 +70,6 @@ export default function Navbar() {
           Elérhetőségek
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }

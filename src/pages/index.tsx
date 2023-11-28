@@ -13,42 +13,46 @@ export default function Home() {
       </Head>
       <Navbar />
       <PageLayout>
-        <h1 className="py-2 text-3xl">Rólunk</h1>
-        <div className="flex w-full flex-col gap-2 py-2 md:flex-row">
-          <div className="w-full md:w-1/2">
-            <Image
-              className="rounded-lg"
-              src={tolgy1}
-              alt={"The building from outside"}
-              placeholder="blur"
-              width={3783}
-              height={2128}
-            />
+        <section>
+          <h1 className="py-2 text-3xl">Rólunk</h1>
+          <div className="flex w-full flex-col gap-2 py-2 md:flex-row">
+            <figure className="w-full md:w-1/2">
+              <Image
+                className="rounded-lg"
+                src={tolgy1}
+                alt={"The building from outside"}
+                placeholder="blur"
+                width={3783}
+                height={2128}
+              />
+            </figure>
+            <p className="w-full md:w-1/2">
+              A Börzsöny hegység lábánál, az Ipoly folyóhoz közel, barátságos
+              környezetben, helyben készült pizzákkal, gyrossal, burgerekkel,
+              tortillával várjuk kedves vendégeinket. Szórakozási lehetőség:
+              csocsó, biliárd.
+            </p>
           </div>
-          <div className="w-full md:w-1/2">
-            A Börzsöny hegység lábánál, az Ipoly folyóhoz közel, barátságos
-            környezetben, helyben készült pizzákkal, gyrossal, burgerekkel,
-            tortillával várjuk kedves vendégeinket. Szórakozási lehetőség:
-            csocsó, biliárd.
+        </section>
+        <section>
+          <h1 className="py-2 text-3xl">SZÉP Kártya</h1>
+          <div className="flex w-full flex-col gap-2 py-2 md:flex-row-reverse">
+            <figure className="w-full md:w-1/2">
+              <Image
+                className="rounded-lg"
+                src={szep_kartyak}
+                placeholder="blur"
+                alt={"SZEP cards"}
+                width={805}
+                height={461}
+              />
+            </figure>
+            <p className="w-full md:w-1/2">
+              SZÉP-Kártya elfogadóhely lettünk! Elfogadott kártyák: K&H - OTP
+              Bank - MKB
+            </p>
           </div>
-        </div>
-        <h1 className="py-2 text-3xl">SZÉP Kártya</h1>
-        <div className="flex w-full flex-col gap-2 py-2 md:flex-row-reverse">
-          <div className="w-full md:w-1/2">
-            <Image
-              className="rounded-lg"
-              src={szep_kartyak}
-              placeholder="blur"
-              alt={"SZEP cards"}
-              width={805}
-              height={461}
-            />
-          </div>
-          <div className="w-full md:w-1/2">
-            SZÉP-Kártya elfogadóhely lettünk! Elfogadott kártyák: K&H - OTP Bank
-            - MKB
-          </div>
-        </div>
+        </section>
       </PageLayout>
     </>
   );

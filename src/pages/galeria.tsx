@@ -27,7 +27,7 @@ export default function GalleryPage() {
   for (let i = 1; i < 11; i++) {
     const src = `/images/gallery/vt${i}.jpg`;
     images.push(
-      <div
+      <figure
         className="group cursor-pointer"
         key={i}
         onClick={() => {
@@ -47,7 +47,7 @@ export default function GalleryPage() {
             }}
           />
         </div>
-      </div>,
+      </figure>,
     );
   }
   return (
