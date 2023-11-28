@@ -14,12 +14,15 @@ export default function Footer() {
             <h4 className="text-lg text-gray-600">Elérhetőségek</h4>
             <ul>
               <li>
-                <Link href="tel:0627376282" className="underline">
+                <Link href="tel:0627376282" className="hover:underline">
                   06 27 376 282
                 </Link>
               </li>
               <li>
-                <Link href="https://maps.app.goo.gl/4Xxb6k2Umvp1tCoW9">
+                <Link
+                  href="https://maps.app.goo.gl/4Xxb6k2Umvp1tCoW9"
+                  className="hover:underline"
+                >
                   Vámosmikola, Árpád utca 1.
                 </Link>
               </li>

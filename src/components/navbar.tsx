@@ -66,7 +66,7 @@ export default function Navbar() {
         <Link href="/galeria" className="self-center p-2 md:p-0">
           Galéria
         </Link>
-        <Link href="/" className="self-center p-2 md:p-0">
+        <Link href="/elerhetosegek" className="self-center p-2 md:p-0">
           Elérhetőségek
         </Link>
       </div>
